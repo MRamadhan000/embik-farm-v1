@@ -12,36 +12,46 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md fixed w-full z-50">
+    <nav className="bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-100 fixed w-full z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-14 items-center">
-          {/* LEFT */}
-          <div className="flex items-center space-x-2">
-            <div className="w-9 h-9 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-sm">
+        <div className="flex justify-between items-center h-16">
+          
+          {/* LEFT - Logo */}
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-800 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200">
               L
             </div>
-            <span className="font-semibold text-lg text-green-700 tracking-tight">
-              Embik Farm
-            </span>
+            <div className="flex flex-col">
+              <span className="font-bold text-xl text-gray-800 tracking-tight leading-tight">
+                Embik Farm
+              </span>
+              <span className="text-xs text-green-600 font-medium -mt-0.5">
+                Fresh & Natural
+              </span>
+            </div>
           </div>
 
-          {/* RIGHT - Desktop */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* MIDDLE - Navigation Links (Desktop) */}
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-gray-700 text-xs md:text-sm font-medium hover:text-green-700 transition-colors duration-200
-                after:content-[''] after:absolute after:w-0 after:h-[2px] after:left-0 after:-bottom-1 after:bg-green-700 after:transition-all after:duration-300 hover:after:w-full"
+                className="relative text-gray-600 text-sm font-semibold hover:text-green-700 transition-all duration-300 py-2 px-1 group"
               >
                 {link.label}
+                <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-green-600 to-green-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-full"></span>
               </Link>
             ))}
+          </div>
+
+          {/* RIGHT - CTA Button (Desktop) */}
+          <div className="hidden md:flex">
             <Link
-              href="/contact"
-              className="bg-green-700 text-white px-4 py-1.5 rounded-lg hover:bg-green-800 transition font-medium text-xs md:text-sm"
+              href="/kerja-sama"
+              className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 border border-green-600"
             >
-              Buy Now
+              Kerja Sama
             </Link>
           </div>
 
@@ -49,10 +59,11 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md hover:bg-gray-200"
+              className="p-2.5 rounded-xl hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50 transition-all duration-200"
+              aria-label="Toggle mobile menu"
             >
               <svg
-                className="w-5 h-5 text-green-700"
+                className="w-6 h-6 text-gray-700"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -79,29 +90,34 @@ const Navbar = () => {
       </div>
 
       {/* MOBILE MENU */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t shadow-md">
-          <div className="flex flex-col p-3 space-y-2">
-            {navLinks.map((link) => (
+      <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
+        <div className="bg-white/98 backdrop-blur-sm border-t border-gray-100 shadow-lg">
+          <div className="flex flex-col p-4 space-y-1">
+            {navLinks.map((link, index) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 text-sm font-medium hover:text-green-700 transition"
+                className="text-gray-700 text-sm font-semibold hover:text-green-700 hover:bg-green-50 px-4 py-3 rounded-lg transition-all duration-200 transform hover:translate-x-1"
                 onClick={() => setIsOpen(false)}
+                style={{
+                  animationDelay: isOpen ? `${index * 50}ms` : '0ms'
+                }}
               >
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              className="bg-green-700 text-white px-3 py-1.5 rounded-lg hover:bg-green-800 transition font-medium text-sm text-center"
-              onClick={() => setIsOpen(false)}
-            >
-              Buy Now
-            </Link>
+            <div className="pt-2 mt-2 border-t border-gray-100">
+              <Link
+                href="/kerja-sama"
+                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-4 py-3 rounded-lg font-semibold text-sm text-center block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
+                onClick={() => setIsOpen(false)}
+              >
+                Kerja Sama
+              </Link>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
