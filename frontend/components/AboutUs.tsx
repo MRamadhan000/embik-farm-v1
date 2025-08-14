@@ -55,7 +55,7 @@ const AboutUs: React.FC = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+        {/* <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
           <div>
             <div className="text-2xl font-bold text-emerald-600">5+</div>
             <div className="text-sm text-gray-500 uppercase">Tahun Pengalaman</div>
@@ -68,7 +68,7 @@ const AboutUs: React.FC = () => {
             <div className="text-2xl font-bold text-emerald-600">500+</div>
             <div className="text-sm text-gray-500 uppercase">Pelanggan Puas</div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 import { Inter, Playfair_Display } from "next/font/google";
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         
         {/* Padding top biar konten nggak ketiban Navbar */}
         <main className="pt-10">{children}</main>
+        <Footer/>
       </body>
     </html>
   );
