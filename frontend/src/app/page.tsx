@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <OurValues/>
       <AboutUs/>
-      <Stats/>
+      {/* <Stats/> */}
       <OurProducts/>
       <CTASelection/>
     </div>

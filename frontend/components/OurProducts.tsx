@@ -134,13 +134,13 @@
             ))}
             </div>
 
-            {/* Call to Action */}
+            {/* Call to Action
             <div className="text-center mt-16">
             <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-slate-800 to-slate-700 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 hover:from-slate-700 hover:to-slate-600">
                 <span>Lihat Semua Produk</span>
                 <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300" />
             </button>
-            </div>
+            </div> */}
         </div>
 
         <style jsx>{`
