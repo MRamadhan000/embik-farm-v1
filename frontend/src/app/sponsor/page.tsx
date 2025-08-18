@@ -355,7 +355,7 @@ const SponsorRegistration = () => {
                             </svg>
                           ))}
                         </div>
-                        <p className="text-gray-700 text-sm mb-2">"{testimonial.text}"</p>
+                        <p className="text-gray-700 text-sm mb-2">&ldquo;{testimonial.text}&rdquo;</p>
                         <div className="text-sm">
                           <span className="font-semibold text-gray-900">{testimonial.name}</span>
                           <span className="text-gray-500"> - {testimonial.role}</span>
