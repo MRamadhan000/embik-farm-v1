@@ -1,5 +1,6 @@
 // app/components/Footer.tsx
 import React from "react";
+import Link from "next/link";
 import { Facebook, Instagram, Mail, Phone, MapPin, Clock, Award, Users } from "lucide-react";
 
 export default function Footer() {
@@ -73,34 +74,34 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <a href="/" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
+                <Link href="/" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
                   <div className="w-2 h-2 bg-gray-600 rounded-full mr-3 group-hover:bg-emerald-500 transition-colors"></div>
                   Beranda
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/produk" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
+                <Link href="/produk" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
                   <div className="w-2 h-2 bg-gray-600 rounded-full mr-3 group-hover:bg-emerald-500 transition-colors"></div>
                   Produk Kami
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/reseller" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
+                <Link href="/reseller" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
                   <div className="w-2 h-2 bg-gray-600 rounded-full mr-3 group-hover:bg-emerald-500 transition-colors"></div>
                   Menjadi Reseller
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/mitra" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
+                <Link href="/mitra" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
                   <div className="w-2 h-2 bg-gray-600 rounded-full mr-3 group-hover:bg-emerald-500 transition-colors"></div>
                   Menjadi Mitra
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/tentang" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
+                <Link href="/tentang" className="flex items-center group transition-all duration-300 hover:text-emerald-400 hover:translate-x-2">
                   <div className="w-2 h-2 bg-gray-600 rounded-full mr-3 group-hover:bg-emerald-500 transition-colors"></div>
                   Tentang Kami
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -158,18 +159,18 @@ export default function Footer() {
             <div className="space-y-3">
               <h4 className="text-sm font-semibold text-white uppercase tracking-wide">Follow Us</h4>
               <div className="flex space-x-3">
-                <a
+                <Link
                   href="#"
                   className="w-10 h-10 bg-gray-800 hover:bg-blue-600 rounded-lg flex items-center justify-center transition-all duration-300 group hover:scale-110"
                 >
                   <Facebook className="w-5 h-5 text-gray-400 group-hover:text-white" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="#"
                   className="w-10 h-10 bg-gray-800 hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 rounded-lg flex items-center justify-center transition-all duration-300 group hover:scale-110"
                 >
                   <Instagram className="w-5 h-5 text-gray-400 group-hover:text-white" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -207,15 +208,15 @@ export default function Footer() {
             <p>© {new Date().getFullYear()} EMBIK FARM. Semua Hak Dilindungi.</p>
           </div>
           <div className="flex space-x-6">
-            <a href="/privacy" className="hover:text-emerald-400 transition-colors">
+            <Link href="/privacy" className="hover:text-emerald-400 transition-colors">
               Kebijakan Privasi
-            </a>
-            <a href="/terms" className="hover:text-emerald-400 transition-colors">
+            </Link>
+            <Link href="/terms" className="hover:text-emerald-400 transition-colors">
               Syarat & Ketentuan
-            </a>
-            <a href="/sitemap" className="hover:text-emerald-400 transition-colors">
+            </Link>
+            <Link href="/sitemap" className="hover:text-emerald-400 transition-colors">
               Sitemap
-            </a>
+            </Link>
           </div>
         </div>
       </div>
