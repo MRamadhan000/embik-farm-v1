@@ -131,62 +131,62 @@ export default function CTASelection() {
             </div>
           </motion.div>
 
-          {/* Mitra Card */}
+          {/* Sponsor Card */}
           <motion.div
             variants={itemVariants}
             whileHover={{ y: -8, transition: { duration: 0.3 } }}
             className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
           >
             {/* Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             
             {/* Premium Badge */}
             <div className="absolute top-6 right-6">
-              <span className="bg-gradient-to-r from-emerald-500 to-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
-                PREMIUM
+              <span className="bg-gradient-to-r from-purple-500 to-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                EKSKLUSIF
               </span>
             </div>
 
             {/* Content */}
             <div className="relative p-6 md:p-8">
               {/* Icon */}
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl shadow-lg mb-4 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-emerald-700 transition-colors">
-                Business Partner
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-700 transition-colors">
+                Sponsor Partner
               </h3>
               
               <p className="text-gray-600 text-base leading-relaxed mb-6">
-                Kolaborasi strategis untuk pengembangan bisnis peternakan kambing. 
-                Investasi bersama dengan pembagian profit yang menguntungkan kedua belah pihak.
+                Dukung perkembangan peternakan kambing dengan menjadi sponsor. 
+                Dapatkan brand visibility dan kontribusi nyata untuk ekonomi lokal.
               </p>
 
               {/* Benefits List */}
               <div className="space-y-2 mb-6">
                 <div className="flex items-center text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span>Bagi hasil hingga 40%</span>
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                  <span>Brand visibility maksimal</span>
                 </div>
                 <div className="flex items-center text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span>Akses ke semua fasilitas farm</span>
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                  <span>Publikasi media gratis</span>
                 </div>
                 <div className="flex items-center text-gray-700">
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3"></div>
-                  <span>Konsultasi bisnis eksklusif</span>
+                  <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                  <span>Networking bisnis eksklusif</span>
                 </div>
               </div>
 
               <button
-                onClick={() => router.push("/mitra")}
-                className="group/btn w-full bg-gradient-to-r from-emerald-600 to-green-700 hover:from-emerald-700 hover:to-green-800 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                onClick={() => router.push("/sponsor")}
+                className="group/btn w-full bg-gradient-to-r from-purple-600 to-blue-700 hover:from-purple-700 hover:to-blue-800 text-white font-semibold py-3 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <span className="flex items-center justify-center">
-                  Daftar Sebagai Mitra
+                  Daftar Sebagai Sponsor
                   <svg className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
