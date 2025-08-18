@@ -24,7 +24,7 @@ export default function Footer() {
                 </svg>
               </div>
               <div>
-                <h2 className="text-3xl font-bold text-white bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
+                <h2 className="text-3xl font-bold text-white bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text">
                   EMBIK FARM
                 </h2>
                 <p className="text-sm text-emerald-400 font-medium">Premium Goat Farming</p>
