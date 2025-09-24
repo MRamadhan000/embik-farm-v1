@@ -3,6 +3,7 @@ import React from "react";
 import InfoCard from "../components/InfoCard";
 import ApplyForm from "../components/ApplyForm";
 import { DollarSign, Factory, Building2, Milk, Scale } from "lucide-react";
+import { FormData } from "../components/ApplyForm";
 
 const MitraPage = () => {
   const skema = [
@@ -181,7 +182,7 @@ const MitraPage = () => {
           </div>
           <ApplyForm
             productOptions={["Kemitraan - Investor", "Kemitraan - Peternak"]}
-            onSubmit={(data: any) => console.log("Mitra form submitted:", data)}
+            onSubmit={(data: FormData) => console.log("Mitra form submitted:", data)}
           />
         </div>
       </section>
