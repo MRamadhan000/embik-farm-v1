@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import ApplyForm from "../components/ApplyFormv";
 import ProductTableDynamic from "../components/ProductTableDynamic";
+import TestimonialCard from "../components/TestimonialCard";
+import InfoCard from "../components/InfoCard";
 
 interface Product {
   name: string;
@@ -35,11 +37,6 @@ const ResellerRegistration = () => {
     "Semua Produk"
   ];
 
-  const paymentMethods = [
-    "Transfer Bank",
-    "E-Wallet (Dana/OVO/GoPay)",
-    "Cash on Delivery (COD)",
-  ];
 
   const benefits = [
     { icon: "💰", title: "Tanpa Modal Besar", description: "Cukup daftar, langsung bisa jual produk", color: "from-amber-50 to-orange-50 border-amber-200" },
@@ -130,7 +127,7 @@ const ResellerRegistration = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-6">
@@ -154,7 +151,7 @@ const ResellerRegistration = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Product Pricing Section */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white">
@@ -190,56 +187,35 @@ const ResellerRegistration = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16">
-
             {/* Requirements */}
-            <div className="bg-slate-50 rounded-3xl p-10 border border-slate-200">
-              <div className="flex items-center mb-8">
-                <div className="w-12 h-12 bg-slate-600 rounded-2xl flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900">Syarat Menjadi Reseller</h3>
-              </div>
-
-              <div className="space-y-4">
-                {resellerDetails.requirements.map((req, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-slate-700 leading-relaxed">{req}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <InfoCard
+              title="Syarat Menjadi Reseller"
+              icon={
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              }
+              bgColor="bg-slate-50"
+              borderColor="border-slate-200"
+              accentBg="bg-slate-600"
+              listIconBg="bg-emerald-500"
+              points={resellerDetails.requirements}
+            />
 
             {/* Benefits */}
-            <div className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl p-10 border border-emerald-200">
-              <div className="flex items-center mb-8">
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mr-4">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900">Benefit untuk Reseller</h3>
-              </div>
-
-              <div className="space-y-4">
-                {resellerDetails.benefits.map((benefit, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
-                    </div>
-                    <p className="text-slate-700 leading-relaxed">{benefit}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <InfoCard
+              title="Benefit untuk Reseller"
+              icon={
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                </svg>
+              }
+              bgColor="bg-gradient-to-br from-emerald-50 to-teal-50"
+              borderColor="border-emerald-200"
+              accentBg="bg-gradient-to-r from-emerald-500 to-teal-500"
+              listIconBg="bg-gradient-to-r from-emerald-500 to-teal-500"
+              points={resellerDetails.benefits}
+            />
           </div>
         </div>
       </section>
@@ -256,27 +232,7 @@ const ResellerRegistration = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-3xl p-8 shadow-lg border border-slate-200 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-                <div className="flex items-center space-x-1 mb-4">
-                  {Array(testimonial.rating).fill(0).map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.974a1 1 0 00.95.69h4.178c.969 0 1.371 1.24.588 1.81l-3.385 2.46a1 1 0 00-.364 1.118l1.287 3.974c.3.921-.755 1.688-1.54 1.118l-3.385-2.46a1 1 0 00-1.176 0l-3.385 2.46c-.784.57-1.838-.197-1.539-1.118l1.287-3.974a1 1 0 00-.364-1.118L2.048 9.401c-.783-.57-.38-1.81.588-1.81h4.178a1 1 0 00.95-.69l1.286-3.974z" />
-                    </svg>
-                  ))}
-                </div>
-
-                <p className="text-slate-700 leading-relaxed mb-6 italic">&ldquo;{testimonial.text}&rdquo;</p>
-
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <div className="font-bold text-slate-900">{testimonial.name}</div>
-                    <div className="text-slate-600 text-sm">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
+              <TestimonialCard key={index} {...testimonial} />
             ))}
           </div>
         </div>
@@ -393,7 +349,6 @@ const ResellerRegistration = () => {
           <div className="max-w-2xl mx-auto">
             <ApplyForm
               productOptions={productOptions}
-              paymentMethods={paymentMethods}
               onSubmit={handleFormSubmit}
             />
           </div>
