@@ -11,6 +11,7 @@ interface Product {
   consumerPrice: string;
   resellerPrice: string;
   margin: number;
+  [key: string]: string | number; // 👈 ini yang bikin dia cocok dengan Record
 }
 
 const products: Product[] = [
@@ -137,7 +138,7 @@ const ResellerRegistration = () => {
             <p className="text-xl text-slate-600">Dapatkan profit yang menguntungkan dari setiap penjualan</p>
           </div>
 
-          <ProductTableDynamic
+          <ProductTableDynamic<Product>
             data={products}
             columns={[
               { key: "name", label: "Produk" },
@@ -147,10 +148,8 @@ const ResellerRegistration = () => {
                 key: "margin",
                 label: "Profit Anda",
                 align: "center",
-                getClassName: (value) => {
-                  return "text-teal-600 bg-teal-50";
-                },
-                render: (value) => value.toLocaleString("id-ID"),
+                getClassName: () => "text-teal-600 bg-teal-50",
+                render: (value) => (value as number).toLocaleString("id-ID"),
               },
             ]}
           />

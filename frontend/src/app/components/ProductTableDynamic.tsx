@@ -1,21 +1,20 @@
 import React from "react";
 
-interface Column<T> {
-  key: keyof T;
+interface Column<T, K extends keyof T = keyof T> {
+  key: K;
   label: string;
   align?: "left" | "center" | "right";
-  // Optional: fungsi untuk conditional class
-  getClassName?: (value: any) => string;
-  render?: (value: any, row: T) => React.ReactNode; // custom render
+  getClassName?: (value: T[K]) => string;
+  render?: (value: T[K], row: T) => React.ReactNode;
 }
 
-interface ProductTableDynamicProps<T> {
+interface ProductTableDynamicProps<T extends Record<string, unknown>> {
   data: T[];
   columns: Column<T>[];
   tableHeaderBg?: string;
 }
 
-const ProductTableDynamic = <T extends Record<string, any>>({
+const ProductTableDynamic = <T extends Record<string, unknown>>({
   data,
   columns,
   tableHeaderBg = "bg-gradient-to-r from-emerald-500 to-teal-500",
@@ -44,11 +43,13 @@ const ProductTableDynamic = <T extends Record<string, any>>({
                   return (
                     <td
                       key={colIndex}
-                      className={`px-8 py-6 font-semibold text-slate-900 text-${col.align || "left"} ${
-                        col.getClassName ? col.getClassName(value) : ""
-                      }`}
+                      className={`px-8 py-6 font-semibold text-slate-900 text-${
+                        col.align || "left"
+                      } ${col.getClassName ? col.getClassName(value as T[typeof col.key]) : ""}`}
                     >
-                      {col.render ? col.render(value, row) : value}
+                      {col.render
+                        ? col.render(value as T[typeof col.key], row)
+                        : (value as React.ReactNode)}
                     </td>
                   );
                 })}
