@@ -1,9 +1,10 @@
 'use client'
 import React, { useState } from "react";
-import ApplyForm from "../components/ApplyFormv";
+import ApplyForm from "../components/ApplyForm";
 import ProductTableDynamic from "../components/ProductTableDynamic";
 import TestimonialCard from "../components/TestimonialCard";
 import InfoCard from "../components/InfoCard";
+import { FormData } from "../components/ApplyForm";
 
 interface Product {
   name: string;
@@ -19,7 +20,7 @@ const products: Product[] = [
 ];
 const ResellerRegistration = () => {
 
-  const handleFormSubmit = (data: any) => {
+  const handleFormSubmit = (data: FormData) => {
     console.log("Form submitted:", data);
   };
 
@@ -125,33 +126,6 @@ const ResellerRegistration = () => {
           </button>
         </div>
       </section>
-
-      {/* Benefits Section */}
-      {/* <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              Kenapa Harus Jadi <span className="text-emerald-600">Reseller Kami?</span>
-            </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Dapatkan berbagai keuntungan eksklusif yang akan membantu kesuksesan bisnis Anda
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className={`relative p-8 bg-gradient-to-br ${benefit.color} rounded-3xl border-2 hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 group`}>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative z-10">
-                  <div className="text-4xl mb-4">{benefit.icon}</div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
-                  <p className="text-slate-700 leading-relaxed">{benefit.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* Product Pricing Section */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white">

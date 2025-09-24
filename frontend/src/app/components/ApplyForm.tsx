@@ -4,7 +4,7 @@ import InputField from "./InputField";
 import TextareaField from "./TextAreaField";
 import SelectField from "./SelectField";
 
-interface FormData {
+export interface FormData {
   fullName: string;
   email: string;
   whatsapp: string;
