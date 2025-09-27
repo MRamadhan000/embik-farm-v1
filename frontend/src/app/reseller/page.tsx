@@ -1,10 +1,10 @@
 'use client'
 import React, { useState } from "react";
-import ApplyForm from "../components/ApplyForm";
-import ProductTableDynamic from "../components/ProductTableDynamic";
-import TestimonialCard from "../components/TestimonialCard";
-import InfoCard from "../components/InfoCard";
-import { FormData } from "../components/ApplyForm";
+import ApplyForm from "@/components/ApplyForm";
+import ProductTableDynamic from "@/components/ProductTableDynamic";
+import TestimonialCard from "@/components/TestimonialCard";
+import InfoCard from "@/components/InfoCard";
+import { FormData } from "@/components/ApplyForm";
 
 interface Product {
   name: string;

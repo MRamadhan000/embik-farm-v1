@@ -1,8 +1,8 @@
 'use client'
 import React from 'react';
 import { FaGlassWhiskey, FaDrumstickBite, FaLeaf } from 'react-icons/fa';
-import { ProductCard, Product } from '@/app/components/ProductCard';
-import SectionHeader from '@/app/components/SectionHeader';
+import { ProductCard, Product } from '@/components/ProductCard';
+import SectionHeader from '@/components/SectionHeader';
 
 export default function OurProducts() {
     const products: Product[] = [

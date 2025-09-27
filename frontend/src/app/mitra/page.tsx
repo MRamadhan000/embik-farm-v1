@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import InfoCard from "../components/InfoCard";
-import ApplyForm from "../components/ApplyForm";
+import InfoCard from "@/components/InfoCard";
+import ApplyForm from "@/components/ApplyForm";
 import { DollarSign, Factory, Building2, Milk, Scale } from "lucide-react";
-import { FormData } from "../components/ApplyForm";
+import { FormData } from "@/components/ApplyForm";
 
 const MitraPage = () => {
   const skema = [
@@ -183,6 +183,7 @@ const MitraPage = () => {
           <ApplyForm
             productOptions={["Kemitraan - Investor", "Kemitraan - Peternak"]}
             onSubmit={(data: FormData) => console.log("Mitra form submitted:", data)}
+            buttonClassName="bg-gradient-to-r from-amber-500 to-yellow-500"
           />
         </div>
       </section>

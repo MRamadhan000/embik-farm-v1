@@ -2,7 +2,7 @@
 import { Milk, ShieldCheck, HeartHandshake } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import SectionHeader from "./SectionHeader";
+import SectionHeader from "@/components/SectionHeader";
 
 export default function OurValues() {
   const values = [
@@ -81,7 +81,7 @@ export default function OurValues() {
               transition={{ duration: 0.3 }}
               className="group relative"
             >
-              <div className="relative bg-white border border-gray-200 rounded-2xl p-6 lg:p-8 text-center shadow-md hover:bg-green-600 transition-all duration-300">
+              <div className="relative bg-white border border-gray-200 rounded-2xl p-12 px-24 lg:p-8 text-center shadow-md hover:bg-green-600 transition-all duration-300">
                 <div className="flex justify-center mb-6">
                   <div className="p-5 rounded-xl bg-green-100 group-hover:bg-green-500 transition-colors duration-300">
                     <value.icon
