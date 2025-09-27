@@ -10,7 +10,8 @@ import {
     CheckCircle,
     Star,
     Award,
-    Shield
+    Shield,
+    Leaf,
 } from "lucide-react";
 
 const ProductsPage = () => {
@@ -74,6 +75,14 @@ const ProductsPage = () => {
             color: 'from-pink-100 to-rose-100',
             accent: 'pink-600',
             link: '/produk/ice-cream'
+        },
+        {
+            name: 'kohemax',
+            title: 'Kohemax',
+            description: 'Pupuk organik berkualitas tinggi dari kotoran kambing, ramah lingkungan untuk pertanian produktif.',
+            icon: <Leaf className="w-16 h-16 text-green-600" />,
+            link: '/produk/kohemax',
+            stockMax: 1
         }
     ];
 
