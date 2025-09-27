@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
+import React, { FormEvent, useEffect, useState, ChangeEvent } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -69,12 +69,12 @@ const ContactPage = () => {
         }
     ];
 
-    const handleInputChange = (e : any) => {
+     const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e : any) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitted(true);
         setTimeout(() => {
@@ -82,7 +82,6 @@ const ContactPage = () => {
             setIsSubmitted(false);
         }, 2000);
     };
-
     return (
         <div className="min-h-screen bg-gradient-to-br from-green-50 via-teal-50 to-emerald-50">
             {/* Hero Section */}
