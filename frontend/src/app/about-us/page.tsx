@@ -15,16 +15,36 @@ import {
   BookOpen,
   Clock,
 } from "lucide-react";
-import MilestoneModal from "@/components/MilestoneModal"; // Tambahkan ini
+import type { JSX } from 'react'; // Tambahkan import ini
+import MilestoneModal from "@/components/MilestoneModal";
+
+// Definisikan interface untuk milestone
+interface MilestoneStory {
+  title: string;
+  image: string;
+  content: string;
+  achievements: string[];
+}
+
+interface Milestone {
+  year: string;
+  event: string;
+  icon: string;
+  color: string;
+  bgColor: string;
+  story: MilestoneStory;
+}
 
 const AboutPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
-  const [selectedMilestone, setSelectedMilestone] = useState(null);
+  // Update state dengan type yang tepat
+  const [selectedMilestone, setSelectedMilestone] = useState<Milestone | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (milestone: any) => {
+  // Update function parameter dengan type yang tepat
+  const openModal = (milestone: Milestone) => {
     setSelectedMilestone(milestone);
     setIsModalOpen(true);
   };
@@ -89,13 +109,13 @@ const AboutPage = () => {
     },
   ];
 
-  // Data milestones - gunakan string untuk icon dengan tema hijau konsisten
-  const milestones = [
+  // Data milestones dengan type yang tepat
+  const milestones: Milestone[] = [
     {
       year: "2020",
       event:
         "Pendirian Embik Farm sebagai peternakan keluarga kecil dengan 10 ekor kambing",
-      icon: "building", // string instead of React component
+      icon: "building",
       color: "from-green-500 to-green-600",
       bgColor: "bg-gradient-to-br from-green-500 to-green-600",
       story: {
@@ -169,8 +189,8 @@ const AboutPage = () => {
     },
   ];
 
-  // Helper function untuk render icon
-  const renderIcon = (iconName: string, className: string = "w-8 h-8") => {
+  // Helper function untuk render icon dengan type yang tepat
+  const renderIcon = (iconName: string, className: string = "w-8 h-8"): JSX.Element => {
     const iconProps = { className };
 
     switch (iconName) {
@@ -298,7 +318,8 @@ const AboutPage = () => {
                   className="w-full h-full object-cover"
                   onError={(e) => {
                     // Fallback jika gambar tidak ditemukan
-                    e.currentTarget.style.display = "none";
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.style.display = "none";
                   }}
                 />
 
@@ -622,6 +643,8 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+      
+      {/* Modal Component */}
       <MilestoneModal
         isOpen={isModalOpen}
         milestone={selectedMilestone}
