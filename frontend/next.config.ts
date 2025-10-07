@@ -1,7 +1,7 @@
 // next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export", // ini bikin Nexct.js nge-build jadi static export (SSG)
+  // output: "export",
   images: {
     remotePatterns: [
       {
@@ -47,11 +47,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
   },
-  // Konfigurasi tambahan untuk performa
-  compress: true,
-  poweredByHeader: false,
-  reactStrictMode: true,
-  swcMinify: true,
 };
 
 module.exports = nextConfig;

@@ -18,15 +18,14 @@ export default function Home() {
         title="Our Gallery"
         description="Kumpulan momen dan dokumentasi kegiatan kami yang penuh makna."
         images={[
-          "https://picsum.photos/400?random=1",
-          "https://picsum.photos/400?random=2",
-          "https://picsum.photos/400?random=3",
-          "https://picsum.photos/400?random=4",
-          "https://picsum.photos/400?random=5",
-          "https://picsum.photos/400?random=6",
-          "https://picsum.photos/400?random=7",
-          "https://picsum.photos/400?random=8",
-          "https://picsum.photos/400?random=9", // lebih dari 8, auto di-slice
+          "/images/hero/gallery/g-1.jpg",
+          "/images/hero/gallery/g-2.jpg",
+          "/images/hero/gallery/g-3.jpg",
+          "/images/hero/gallery/g-4.jpg",
+          "/images/hero/gallery/g-5.jpg",
+          "/images/hero/gallery/g-6.jpg",
+          "/images/hero/gallery/g-7.jpg",
+          "/images/hero/gallery/g-8.jpg",
         ]}
       />
       <OurProducts />

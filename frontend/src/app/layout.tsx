@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import ConditionalLayout from "@/components/ConditionalLayout";
 
 import { Inter, Playfair_Display } from "next/font/google";
 
@@ -14,7 +13,6 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
 });
-
 
 export const metadata: Metadata = {
   title: "Embik Farm",
@@ -31,12 +29,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
-        {/* Navbar akan muncul di semua halaman */}
-        <Navbar />
-        
-        {/* Padding top biar konten nggak ketiban Navbar */}
-        <main className="pt-10">{children}</main>
-        <Footer/>
+        <ConditionalLayout>
+          {children}
+        </ConditionalLayout>
       </body>
     </html>
   );
