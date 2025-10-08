@@ -1,17 +1,26 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { FaGlassWhiskey, FaDrumstickBite, FaLeaf } from "react-icons/fa";
 import { CheckCircle, ArrowRight, ImageIcon, Package } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 
 export default function OurProducts() {
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
+  const [imageLoaded, setImageLoaded] = useState<Record<string, boolean>>({});
   const [hoveredProduct, setHoveredProduct] = useState<string | null>(null);
 
   const handleImageError = (productId: string) => {
+    console.error(`Product image failed to load: ${productId}`);
     setImageErrors((prev) => ({
+      ...prev,
+      [productId]: true,
+    }));
+  };
+
+  const handleImageLoad = (productId: string) => {
+    console.log(`Product image loaded successfully: ${productId}`);
+    setImageLoaded((prev) => ({
       ...prev,
       [productId]: true,
     }));
@@ -31,7 +40,7 @@ export default function OurProducts() {
       gradient: "from-emerald-500 to-teal-600",
       bgGradient: "from-emerald-50 to-teal-50",
       textColor: "text-emerald-600",
-      link: "/produk/susu-kambing",
+      link: "/products/susu-kambing",
       badge: "Fresh",
       popular: true,
       price: "Rp 25.000/L",
@@ -50,7 +59,7 @@ export default function OurProducts() {
       gradient: "from-rose-500 to-pink-600",
       bgGradient: "from-rose-50 to-pink-50",
       textColor: "text-rose-600",
-      link: "/produk/daging-segar",
+      link: "/products/daging-segar",
       badge: "Premium",
       price: "Rp 80.000/kg",
       features: ["Segar", "Higienis", "Siap Masak"],
@@ -68,7 +77,7 @@ export default function OurProducts() {
       gradient: "from-lime-500 to-green-600",
       bgGradient: "from-lime-50 to-green-50",
       textColor: "text-lime-600",
-      link: "/produk/kohemax",
+      link: "/products/kohemax",
       badge: "Eco-Friendly",
       new: true,
       price: "Rp 15.000/kg",
@@ -105,13 +114,15 @@ export default function OurProducts() {
                   {/* Product Image Section - IMPROVED */}
                   <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden rounded-t-2xl sm:rounded-t-3xl bg-gradient-to-br from-gray-50 to-gray-100">
                     {!imageErrors[product.id] ? (
-                      <Image
+                      <img
                         src={product.image}
                         alt={product.imageAlt}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        className={`absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-700 ${
+                          imageLoaded[product.id] ? 'opacity-100' : 'opacity-0'
+                        }`}
+                        loading={index === 0 ? "eager" : "lazy"}
                         onError={() => handleImageError(product.id)}
-                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        onLoad={() => handleImageLoad(product.id)}
                       />
                     ) : (
                       // Fallback when image fails to load
@@ -123,6 +134,16 @@ export default function OurProducts() {
                           <p className="text-sm sm:text-base font-medium opacity-80">
                             {product.title}
                           </p>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Loading Skeleton */}
+                    {!imageLoaded[product.id] && !imageErrors[product.id] && (
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-pulse flex items-center justify-center">
+                        <div className="text-gray-400">
+                          <ImageIcon className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-2" />
+                          <p className="text-xs sm:text-sm">Loading...</p>
                         </div>
                       </div>
                     )}

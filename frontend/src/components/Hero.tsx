@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const Hero = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -37,16 +36,13 @@ const Hero = () => {
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 {!imageError && (
-                    <Image
+                    <img
                         src="/images/hero/heroBg.jpg"
                         alt="Hero Background"
-                        fill
-                        className={`object-cover transition-opacity duration-500 ${
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
                             imageLoaded ? 'opacity-20' : 'opacity-0'
                         }`}
-                        priority
-                        quality={85}
-                        sizes="100vw"
+                        loading="eager"
                         onLoad={() => {
                             setImageLoaded(true);
                             console.log('Hero image loaded successfully');

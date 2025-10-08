@@ -13,7 +13,7 @@ const MitraPage = () => {
       color: {
         bg: "bg-emerald-50",
         border: "border-emerald-200",
-        accent: "bg-emerald-600",
+        accent: "bg-emerald-600", 
         listIcon: "bg-emerald-500",
       },
       points: [

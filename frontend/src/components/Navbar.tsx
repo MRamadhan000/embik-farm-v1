@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   const navLinks = [
     { label: "Home", href: "/" },
-    { label: "Product", href: "/produk" },
+    { label: "Product", href: "/products" },
     { label: "About Us", href: "/about-us" },
     { label: "Kontak", href: "/contact" },
   ];
@@ -38,14 +38,26 @@ const Navbar = () => {
             {/* LEFT - Logo */}
             <Link href="/" className="flex items-center space-x-3 group">
               <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transform group-hover:scale-105 transition-all duration-200">
-                <Image
-                  src="/images/logo.jpg"
-                  alt="Embik Farm Logo"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="40px"
-                />
+                {!logoError ? (
+                  <img
+                    src="/images/logo.jpg"
+                    alt="Embik Farm Logo"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                    onError={() => {
+                      console.error('Logo failed to load');
+                      setLogoError(true);
+                    }}
+                    onLoad={() => {
+                      console.log('Logo loaded successfully');
+                    }}
+                  />
+                ) : (
+                  // Fallback logo jika gambar gagal load
+                  <div className="w-full h-full bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">EF</span>
+                  </div>
+                )}
               </div>
               <span className="font-bold text-xl text-gray-800 tracking-tight group-hover:text-green-700 transition-colors duration-200">
                 Embik Farm

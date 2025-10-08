@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Milk,
   Package,
@@ -64,7 +63,7 @@ const ProductsPage = () => {
       gradient: "from-blue-500 to-cyan-500",
       bgGradient: "from-blue-50 to-cyan-50",
       textColor: "text-blue-600",
-      link: "/produk/susu-kambing",
+      link: "/products/susu-kambing",
       popular: true,
       features: ["Pasteurisasi", "Kaya Protein"],
     },
@@ -80,7 +79,7 @@ const ProductsPage = () => {
       gradient: "from-red-500 to-pink-500",
       bgGradient: "from-red-50 to-pink-50",
       textColor: "text-red-600",
-      link: "/produk/daging-segar",
+      link: "/products/daging-segar",
       features: ["Segar", "Higienis", "Siap Masak"],
     },
     {
@@ -95,7 +94,7 @@ const ProductsPage = () => {
       gradient: "from-green-500 to-emerald-500",
       bgGradient: "from-green-50 to-emerald-50",
       textColor: "text-green-600",
-      link: "/produk/kambing-hidup",
+      link: "/products/kambing-hidup",
       features: ["Sehat", "Pakan Alami", "Investasi"],
     },
     {
@@ -110,7 +109,7 @@ const ProductsPage = () => {
       gradient: "from-purple-500 to-pink-500",
       bgGradient: "from-purple-50 to-pink-50",
       textColor: "text-purple-600",
-      link: "/produk/ice-cream",
+      link: "/products/ice-cream",
       features: ["Rendah Lemak", "Rasa Alami", "Lembut"],
     },
     {
@@ -125,7 +124,7 @@ const ProductsPage = () => {
       gradient: "from-amber-500 to-orange-500",
       bgGradient: "from-amber-50 to-orange-50",
       textColor: "text-amber-600",
-      link: "/produk/kohemax",
+      link: "/products/kohemax",
       features: ["Organik", "Ramah Lingkungan"],
       new: true,
     },
@@ -279,13 +278,12 @@ const ProductsPage = () => {
                     {/* Product Image Section */}
                     <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden rounded-t-2xl sm:rounded-t-3xl">
                       {!imageErrors[product.id] ? (
-                        <Image
+                        <img
                           src={product.image}
                           alt={product.imageAlt}
-                          fill
-                          className="object-cover group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           onError={() => handleImageError(product.id)}
-                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          loading="lazy"
                         />
                       ) : (
                         // Fallback when image fails to load
