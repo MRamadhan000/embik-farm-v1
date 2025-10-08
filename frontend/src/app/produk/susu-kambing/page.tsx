@@ -20,6 +20,7 @@ import {
   Package,
   Sprout,
   Truck,
+  Milk,
   Calendar,
 } from "lucide-react";
 
@@ -285,35 +286,39 @@ const SusuKambingPage = () => {
             }`}
           >
             <div className="relative bg-white p-2 sm:p-3 lg:p-4 rounded-2xl sm:rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-500 z-10">
-              <div className="w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-blue-100 via-cyan-100 to-amber-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative">
-                {/* Product illustration */}
-                <div className="text-center relative">
-                  <div className="w-20 sm:w-24 lg:w-32 h-20 sm:h-24 lg:h-32 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 shadow-lg">
-                    <Droplet className="w-10 sm:w-12 lg:w-16 h-10 sm:h-12 lg:h-16 text-blue-700" />
-                  </div>
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-800">
-                    GEMIK
-                  </div>
-                  <div className="text-sm sm:text-base text-blue-600">
-                    Susu Kambing Premium
-                  </div>
-                </div>
+              <div className="w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-blue-100 via-cyan-100 to-amber-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
+                {/* Product Image */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/products/susu-kambing.jpg"
+                    alt="Susu Kambing GEMIK Premium - Segar dan Pasteurisasi"
+                    fill
+                    className="object-cover rounded-xl sm:rounded-2xl"
+                    priority
+                    sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
+                  />
 
-                {/* Decorative elements - Smaller on mobile */}
-                <div className="absolute top-4 sm:top-6 lg:top-8 left-4 sm:left-6 lg:left-8">
-                  <Droplet className="w-5 sm:w-6 lg:w-8 h-5 sm:h-6 lg:h-8 text-cyan-400" />
-                </div>
-                <div className="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-6 lg:right-8">
-                  <Sprout className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-blue-400" />
-                </div>
-                <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-6 lg:left-8">
-                  <Award className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-amber-500" />
+                  {/* Overlay gradient for better contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-cyan-900/20 rounded-xl sm:rounded-2xl"></div>
+
+                  {/* Text overlay on image */}
+                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white z-10">
+                    <div className="bg-gradient-to-r from-blue-600/90 to-cyan-600/90 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-lg border border-white/20">
+                      <div className="text-xl sm:text-2xl lg:text-3xl font-bold flex items-center gap-2">
+                        <Droplet className="w-5 h-5 sm:w-6 sm:h-6" />
+                        GEMIK
+                      </div>
+                      <div className="text-xs sm:text-sm lg:text-base opacity-90">
+                        Susu Kambing Premium
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Quality Badge */}
+              {/* Quality Badge - Premium */}
               <div
-                className={`absolute -top-2 sm:-top-3 lg:-top-4 -right-2 sm:-right-3 lg:-right-4 bg-blue-600 text-white px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 rounded-full shadow-lg transform rotate-12 z-20 transition-all duration-700 delay-1000 flex items-center gap-1 ${
+                className={`absolute -top-2 sm:-top-3 lg:-top-4 -right-2 sm:-right-3 lg:-right-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 rounded-full shadow-lg transform rotate-12 z-20 transition-all duration-700 delay-1000 flex items-center gap-1 ${
                   isLoaded ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
               >
@@ -981,7 +986,6 @@ const SusuKambingPage = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm mb-4 sm:mb-5 lg:mb-6">
-        
             <div className="flex items-center gap-1.5 sm:gap-2">
               <Mail className="w-3 sm:w-4 h-3 sm:h-4" />
               <span className="break-all sm:break-normal">
@@ -997,7 +1001,6 @@ const SusuKambingPage = () => {
             </p>
           </div>
         </div>
-        
       </section>
     </div>
   );

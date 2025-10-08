@@ -302,48 +302,43 @@ const GemikIceCreamPage = () => {
           >
             <div className="relative bg-white p-3 sm:p-4 rounded-2xl sm:rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-500 z-10">
               <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
-                {/* Ice cream illustration */}
-                <div className="text-center relative">
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-gradient-to-br from-pink-300 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
-                    <IceCream2 className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-white" />
-                  </div>
-                  <div className="text-xl sm:text-2xl font-bold text-purple-800">
-                    GEMIK
-                  </div>
-                  <div className="text-sm sm:text-base text-purple-600">
-                    Ice Cream Premium
-                  </div>
-                </div>
+                {/* Product Image */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/products/ice-cream.jpg"
+                    alt="Ice Cream Susu Kambing GEMIK Premium - Sehat dan Lezat"
+                    fill
+                    className="object-cover rounded-xl sm:rounded-2xl"
+                    priority
+                    sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                  />
 
-                {/* Decorative elements - RESPONSIVE */}
-                <div className="absolute top-2 sm:top-4 left-2 sm:left-4">
-                  <Snowflake
-                    className="w-4 h-4 sm:w-6 sm:h-6 text-blue-300 animate-spin"
-                    style={{ animationDuration: "3s" }}
-                  />
-                </div>
-                <div className="absolute top-4 sm:top-8 right-3 sm:right-6">
-                  <Snowflake
-                    className="w-3 h-3 sm:w-4 sm:h-4 text-pink-300 animate-spin"
-                    style={{ animationDuration: "4s" }}
-                  />
-                </div>
-                <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8">
-                  <Snowflake
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-purple-300 animate-spin"
-                    style={{ animationDuration: "5s" }}
-                  />
+                  {/* Overlay gradient for better contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/20 rounded-xl sm:rounded-2xl"></div>
+
+                  {/* Text overlay on image */}
+                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white z-10">
+                    <div className="bg-gradient-to-r from-pink-500/80 to-purple-600/80 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-lg">
+                      <div className="text-xl sm:text-2xl font-bold flex items-center gap-2">
+                        <IceCream2 className="w-5 h-5 sm:w-6 sm:h-6" />
+                        GEMIK
+                      </div>
+                      <div className="text-xs sm:text-sm lg:text-base opacity-90">
+                        Ice Cream Premium
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Quality Badge - RESPONSIVE */}
+              {/* Fresh Badge */}
               <div
-                className={`absolute -top-3 sm:-top-4 -right-3 sm:-right-4 bg-pink-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg transform rotate-12 z-20 transition-all duration-700 delay-1000 flex items-center gap-1 ${
+                className={`absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-lg transform -rotate-6 z-20 transition-all duration-700 delay-1200 flex items-center gap-1 ${
                   isLoaded ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
               >
-                <Award className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-xs sm:text-sm font-bold">Healthy!</span>
+                <Snowflake className="w-3 h-3 sm:w-4 sm:h-4" />
+                <span className="text-xs sm:text-sm font-bold">Fresh!</span>
               </div>
             </div>
           </div>

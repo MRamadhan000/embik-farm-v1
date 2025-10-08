@@ -278,6 +278,7 @@ const KohemaxPage = () => {
           </div>
 
           {/* Right Content - Mobile Responsive */}
+          {/* Right Content - Mobile Responsive */}
           <div
             className={`w-full lg:w-1/2 flex justify-center lg:justify-end relative transition-all duration-1000 ease-out delay-300 ${
               isLoaded
@@ -286,41 +287,45 @@ const KohemaxPage = () => {
             }`}
           >
             <div className="relative bg-white p-3 sm:p-4 rounded-2xl sm:rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-500 z-10">
-              <div className="w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-br from-green-100 via-lime-100 to-amber-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative">
-                {/* Product illustration */}
-                <div className="text-center relative">
-                  <div className="w-20 sm:w-28 md:w-32 h-20 sm:h-28 md:h-32 bg-gradient-to-br from-green-200 to-lime-200 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
-                    <Sprout className="w-10 sm:w-14 md:w-16 h-10 sm:h-14 md:h-16 text-green-700" />
-                  </div>
-                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-green-800">
-                    KOHEMAX
-                  </div>
-                  <div className="text-sm sm:text-base text-green-600">
-                    Pupuk Organik Premium
-                  </div>
-                </div>
+              <div className="w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-br from-green-100 via-lime-100 to-amber-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
+                {/* Product Image */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/products/kohemax.jpg"
+                    alt="Pupuk Organik KOHEMAX - Premium dari Embik Farm"
+                    fill
+                    className="object-cover rounded-xl sm:rounded-2xl"
+                    priority
+                    sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                  />
 
-                {/* Decorative elements - Responsive */}
-                <div className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-8">
-                  <Leaf className="w-5 sm:w-6 md:w-8 h-5 sm:h-6 md:h-8 text-lime-400" />
-                </div>
-                <div className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8">
-                  <Sprout className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-green-400" />
-                </div>
-                <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-4 sm:left-6 md:left-8">
-                  <Award className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-amber-500" />
-                </div>
+                  {/* Overlay gradient for better contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/60 via-transparent to-lime-900/30 rounded-xl sm:rounded-2xl"></div>
+
+                  {/* Text overlay on image */}
+                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white z-10">
+                    <div className="bg-gradient-to-r from-green-600/90 to-lime-600/90 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-lg border border-white/20">
+                      <div className="text-xl sm:text-2xl md:text-3xl font-bold flex items-center gap-2">
+                        <Sprout className="w-5 h-5 sm:w-6 sm:h-6" />
+                        KOHEMAX
+                      </div>
+                      <div className="text-xs sm:text-sm md:text-base opacity-90">
+                        Pupuk Organik Premium
+                      </div>
+                    </div>
+                  </div>
+                </div>    
               </div>
 
-              {/* Quality Badge - Mobile Responsive */}
+              {/* Eco-Friendly Badge */}
               <div
-                className={`absolute -top-2 sm:-top-4 -right-2 sm:-right-4 bg-green-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg transform rotate-12 z-20 transition-all duration-700 delay-1000 flex items-center gap-1 ${
+                className={`absolute -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 bg-gradient-to-r from-lime-500 to-green-600 text-white px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-lg transform -rotate-6 z-20 transition-all duration-700 delay-1200 flex items-center gap-1 ${
                   isLoaded ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
               >
-                <Award className="w-3 sm:w-4 h-3 sm:h-4" />
-                <span className="text-xs sm:text-sm font-bold">Premium!</span>
-              </div>
+                <Leaf className="w-3 sm:w-4 h-3 sm:h-4" />
+                <span className="text-xs sm:text-sm font-bold">Eco!</span>
+              </div>     
             </div>
           </div>
         </div>

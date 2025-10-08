@@ -310,29 +310,37 @@ const DagingKambingPage = () => {
             }`}
           >
             <div className="relative bg-white p-2 sm:p-3 lg:p-4 rounded-2xl sm:rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-500 z-10">
-              <div className="w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-red-100 via-orange-100 to-yellow-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative">
-                {/* Meat illustration */}
-                <div className="text-center relative">
-                  <div className="w-20 sm:w-24 lg:w-32 h-20 sm:h-24 lg:h-32 bg-gradient-to-br from-red-200 to-orange-200 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-3 lg:mb-4 shadow-lg">
-                    <Beef className="w-10 sm:w-12 lg:w-16 h-10 sm:h-12 lg:h-16 text-red-700" />
-                  </div>
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-red-800">
-                    EMBIK FARM
-                  </div>
-                  <div className="text-sm sm:text-base text-red-600">
-                    Daging Kambing Premium
+              <div className="w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-red-100 via-orange-100 to-yellow-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
+                {/* Product Image */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/products/daging-segar.png"
+                    alt="Daging Kambing Segar Premium Embik Farm"
+                    fill
+                    className="object-cover rounded-xl sm:rounded-2xl"
+                    priority
+                    sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
+                  />
+
+                  {/* Overlay gradient for better text visibility */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-xl sm:rounded-2xl"></div>
+
+                  {/* Text overlay on image */}
+                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white z-10">
+                    <div className="bg-black/40 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4">
+                      <div className="text-lg sm:text-xl lg:text-2xl font-bold">
+                        EMBIK FARM
+                      </div>
+                      <div className="text-xs sm:text-sm lg:text-base">
+                        Daging Kambing Premium
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 {/* Decorative elements - Smaller on mobile */}
-                <div className="absolute top-4 sm:top-6 lg:top-8 left-4 sm:left-6 lg:left-8">
-                  <ChefHat className="w-5 sm:w-6 lg:w-8 h-5 sm:h-6 lg:h-8 text-orange-400" />
-                </div>
-                <div className="absolute top-4 sm:top-6 lg:top-8 right-4 sm:right-6 lg:right-8">
-                  <Utensils className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-red-400" />
-                </div>
-                <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-6 lg:left-8">
-                  <Award className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-amber-500" />
+                <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-4 sm:left-6 lg:left-8 bg-white/90 backdrop-blur-sm rounded-full p-2 sm:p-2.5 shadow-lg">
+                  <Award className="w-4 sm:w-5 lg:w-6 h-4 sm:h-5 lg:h-6 text-amber-600" />
                 </div>
               </div>
 
@@ -704,136 +712,6 @@ const DagingKambingPage = () => {
                 ></div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Product Options - Mobile Optimized */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-red-50 to-orange-50">
-        <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-red-800 mb-2 sm:mb-3 lg:mb-4">
-              Pilihan Potongan & Berat
-            </h2>
-            <p className="text-sm sm:text-base lg:text-lg text-red-600">
-              Sesuaikan dengan kebutuhan dan acara Anda
-            </p>
-          </div>
-
-          {/* Cut Selection */}
-          <div className="mb-8 sm:mb-10 lg:mb-12">
-            <h3 className="text-lg sm:text-xl font-semibold text-red-800 mb-4 sm:mb-5 lg:mb-6 text-center">
-              Pilih Jenis Potongan
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
-              {cuts.map((cut) => (
-                <div
-                  key={cut.name}
-                  className={`relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${
-                    selectedCut === cut.name
-                      ? "ring-2 sm:ring-4 ring-red-500"
-                      : ""
-                  } ${cut.popular ? "ring-2 ring-orange-400" : ""}`}
-                  onClick={() => setSelectedCut(cut.name)}
-                >
-                  {cut.popular && (
-                    <div className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-orange-500 text-white px-2 sm:px-3 lg:px-4 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
-                        Terpopuler
-                      </span>
-                    </div>
-                  )}
-                  <div
-                    className={`w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 bg-gradient-to-br ${cut.color} rounded-full mx-auto mb-2 sm:mb-3 lg:mb-4 flex items-center justify-center shadow-md`}
-                  >
-                    <Scissors
-                      className={`w-6 sm:w-8 lg:w-10 h-6 sm:h-8 lg:h-10 text-${cut.accent}`}
-                    />
-                  </div>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-red-800 text-center mb-1 sm:mb-2">
-                    {cut.title}
-                  </h3>
-                  <p className="text-red-600 text-center text-xs sm:text-sm">
-                    {cut.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Weight/Package Selection */}
-          <div>
-            <h3 className="text-lg sm:text-xl font-semibold text-red-800 mb-4 sm:mb-5 lg:mb-6 text-center">
-              Pilih Berat/Paket
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-              {packages.map((pkg) => (
-                <div
-                  key={pkg.weight}
-                  className={`relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1 ${
-                    selectedWeight === pkg.weight
-                      ? "ring-2 sm:ring-4 ring-red-500"
-                      : ""
-                  } ${pkg.popular ? "ring-2 ring-orange-400" : ""} ${
-                    pkg.special ? "ring-2 ring-amber-500" : ""
-                  }`}
-                  onClick={() => setSelectedWeight(pkg.weight)}
-                >
-                  {pkg.popular && (
-                    <div className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-orange-500 text-white px-2 sm:px-3 lg:px-4 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
-                        Terpopuler
-                      </span>
-                    </div>
-                  )}
-                  {pkg.special && (
-                    <div className="absolute -top-2 sm:-top-3 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-amber-500 text-white px-2 sm:px-3 lg:px-4 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-bold">
-                        Special
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="text-center">
-                    <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-red-800 mb-1 sm:mb-2">
-                      {pkg.weight}
-                    </div>
-                    <div className="text-xs sm:text-sm text-red-600 mb-2 sm:mb-3">
-                      {pkg.type}
-                    </div>
-                    <div className="text-lg sm:text-xl lg:text-2xl font-bold text-red-600 mb-0.5 sm:mb-1">
-                      {pkg.price === "Call"
-                        ? "Hubungi Kami"
-                        : `Rp ${pkg.price}`}
-                    </div>
-                    {pkg.originalPrice && (
-                      <div className="text-xs sm:text-sm text-gray-500 line-through mb-3 sm:mb-4">
-                        Rp {pkg.originalPrice}
-                      </div>
-                    )}
-
-                    <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-red-600 mb-4 sm:mb-5 lg:mb-6">
-                      <div className="flex items-center gap-1.5 sm:gap-2 justify-center">
-                        <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4" />
-                        <span>Segar terjamin</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 sm:gap-2 justify-center">
-                        <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4" />
-                        <span>Diproses higienis</span>
-                      </div>
-                      <div className="flex items-center gap-1.5 sm:gap-2 justify-center">
-                        <CheckCircle className="w-3 sm:w-4 h-3 sm:h-4" />
-                        <span>Bisa antar</span>
-                      </div>
-                    </div>
-
-                    <button className="w-full bg-red-600 text-white py-2 sm:py-2.5 lg:py-3 rounded-lg hover:bg-red-700 transition-colors text-sm sm:text-base">
-                      {pkg.price === "Call" ? "Hubungi" : "Pilih Paket"}
-                    </button>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
