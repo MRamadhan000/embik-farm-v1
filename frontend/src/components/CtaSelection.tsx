@@ -37,7 +37,7 @@ export default function CTAMitraSection() {
   const router = useRouter();
   
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20 xl:py-24 relative overflow-hidden">
+    <section id="kerja-sama" className="bg-white py-12 sm:py-16 lg:py-20 xl:py-24 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-48 sm:w-64 lg:w-80 xl:w-96 h-48 sm:h-64 lg:h-80 xl:h-96 bg-green-600 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl sm:blur-3xl"></div>

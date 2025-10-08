@@ -278,6 +278,7 @@ const KambingHidupPage = () => {
           </div>
 
           {/* Right Content - Mobile Responsive */}
+          {/* Right Content - Mobile Responsive */}
           <div
             className={`w-full lg:w-1/2 flex justify-center lg:justify-end relative transition-all duration-1000 ease-out delay-300 ${
               isLoaded
@@ -286,35 +287,39 @@ const KambingHidupPage = () => {
             }`}
           >
             <div className="relative bg-white p-3 sm:p-4 rounded-2xl sm:rounded-3xl shadow-2xl transform hover:scale-105 transition-all duration-500 z-10">
-              <div className="w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-br from-green-100 via-teal-100 to-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative">
-                {/* Product illustration */}
-                <div className="text-center relative">
-                  <div className="w-20 sm:w-28 md:w-32 h-20 sm:h-28 md:h-32 bg-gradient-to-br from-green-200 to-teal-200 rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 shadow-lg">
-                    <Tractor className="w-10 sm:w-14 md:w-16 h-10 sm:h-14 md:h-16 text-green-700" />
-                  </div>
-                  <div className="text-lg sm:text-xl md:text-2xl font-bold text-green-800">
-                    EMBIK FARM
-                  </div>
-                  <div className="text-sm sm:text-base text-green-600">
-                    Kambing Hidup Premium
-                  </div>
-                </div>
+              <div className="w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-br from-green-100 via-teal-100 to-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
+                {/* Product Image */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src="/images/products/kambing-hidup.jpg"
+                    alt="Kambing Hidup Premium - Embik Farm untuk Aqiqah, Kurban & Investasi"
+                    fill
+                    className="object-cover rounded-xl sm:rounded-2xl"
+                    priority
+                    sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                  />
 
-                {/* Decorative elements - Responsive */}
-                <div className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-6 md:left-8">
-                  <Leaf className="w-5 sm:w-6 md:w-8 h-5 sm:h-6 md:h-8 text-teal-400" />
-                </div>
-                <div className="absolute top-4 sm:top-6 md:top-8 right-4 sm:right-6 md:right-8">
-                  <Sprout className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-green-400" />
-                </div>
-                <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 left-4 sm:left-6 md:left-8">
-                  <Award className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 text-emerald-500" />
+                  {/* Overlay gradient for better contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-900/60 via-transparent to-teal-900/30 rounded-xl sm:rounded-2xl"></div>
+
+                  {/* Text overlay on image */}
+                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white z-10">
+                    <div className="bg-gradient-to-r from-green-600/90 to-teal-600/90 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-lg border border-white/20">
+                      <div className="text-xl sm:text-2xl md:text-3xl font-bold flex items-center gap-2">
+                        <Tractor className="w-5 h-5 sm:w-6 sm:h-6" />
+                        EMBIK FARM
+                      </div>
+                      <div className="text-xs sm:text-sm md:text-base opacity-90">
+                        Kambing Hidup Premium
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Quality Badge - Mobile Responsive */}
+              {/* Quality Badge - Premium */}
               <div
-                className={`absolute -top-2 sm:-top-4 -right-2 sm:-right-4 bg-green-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg transform rotate-12 z-20 transition-all duration-700 delay-1000 flex items-center gap-1 ${
+                className={`absolute -top-2 sm:-top-4 -right-2 sm:-right-4 bg-gradient-to-r from-green-600 to-teal-600 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full shadow-lg transform rotate-12 z-20 transition-all duration-700 delay-1000 flex items-center gap-1 ${
                   isLoaded ? "scale-100 opacity-100" : "scale-0 opacity-0"
                 }`}
               >

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +13,22 @@ const Navbar = () => {
     { label: "Kontak", href: "/contact" },
   ];
 
+  // ✅ Function untuk smooth scroll
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const section = document.getElementById('kerja-sama');
+    if (section) {
+      const navbarHeight = 64; // h-16 = 64px
+      const targetPosition = section.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+      setIsOpen(false); // Close mobile menu if open
+    }
+  };
+  
   return (
     <>
       <nav className="bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-100 fixed w-full z-50 transition-all duration-300">
@@ -19,19 +36,21 @@ const Navbar = () => {
           <div className="flex justify-between items-center h-16">
             
             {/* LEFT - Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-green-600 to-green-800 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-                E
+            <Link href="/" className="flex items-center space-x-3 group">
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md group-hover:shadow-lg transform group-hover:scale-105 transition-all duration-200">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Embik Farm Logo"
+                  fill
+                  className="object-cover"
+                  priority
+                  sizes="40px"
+                />
               </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-xl text-gray-800 tracking-tight leading-tight">
-                  Embik Farm
-                </span>
-                <span className="text-xs text-green-600 font-medium -mt-0.5">
-                  Fresh & Natural
-                </span>
-              </div>
-            </div>
+              <span className="font-bold text-xl text-gray-800 tracking-tight group-hover:text-green-700 transition-colors duration-200">
+                Embik Farm
+              </span>
+            </Link>
 
             {/* MIDDLE - Navigation Links (Desktop) */}
             <div className="hidden md:flex items-center space-x-8">
@@ -49,12 +68,13 @@ const Navbar = () => {
 
             {/* RIGHT - CTA Button (Desktop) */}
             <div className="hidden md:flex">
-              <Link
-                href="/kerja-sama"
-                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 border border-green-600"
+              <a
+                href="#kerja-sama"
+                onClick={scrollToSection}
+                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 py-2.5 rounded-xl font-semibold text-sm shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 border border-green-600 cursor-pointer"
               >
                 Kerja Sama
-              </Link>
+              </a>
             </div>
 
             {/* MOBILE MENU BUTTON */}
@@ -120,20 +140,20 @@ const Navbar = () => {
                   </Link>
                 ))}
                 <div className="pt-3 mt-3 border-t border-gray-100">
-                  <Link
-                    href="/kerja-sama"
-                    className={`bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-4 py-3 rounded-lg font-semibold text-sm text-center block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 ${
+                  <a
+                    href="#kerja-sama"
+                    onClick={scrollToSection}
+                    className={`bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-4 py-3 rounded-lg font-semibold text-sm text-center block shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 cursor-pointer ${
                       isOpen 
                         ? 'animate-slideInLeft opacity-100' 
                         : 'opacity-0'
                     }`}
-                    onClick={() => setIsOpen(false)}
                     style={{
                       animationDelay: isOpen ? `${navLinks.length * 50}ms` : '0ms'
                     }}
                   >
                     Kerja Sama
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
