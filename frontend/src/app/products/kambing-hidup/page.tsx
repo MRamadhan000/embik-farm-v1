@@ -278,7 +278,6 @@ const KambingHidupPage = () => {
           </div>
 
           {/* Right Content - Mobile Responsive */}
-          {/* Right Content - Mobile Responsive */}
           <div
             className={`w-full lg:w-1/2 flex justify-center lg:justify-end relative transition-all duration-1000 ease-out delay-300 ${
               isLoaded
@@ -290,13 +289,11 @@ const KambingHidupPage = () => {
               <div className="w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-br from-green-100 via-teal-100 to-emerald-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
                 {/* Product Image */}
                 <div className="relative w-full h-full">
-                  <Image
+                  <img
                     src="/images/products/kambing-hidup.jpg"
                     alt="Kambing Hidup Premium - Embik Farm untuk Aqiqah, Kurban & Investasi"
-                    fill
-                    className="object-cover rounded-xl sm:rounded-2xl"
-                    priority
-                    sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+                    loading="eager"
                   />
 
                   {/* Overlay gradient for better contrast */}

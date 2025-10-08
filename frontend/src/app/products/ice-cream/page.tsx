@@ -304,15 +304,12 @@ const GemikIceCreamPage = () => {
               <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
                 {/* Product Image */}
                 <div className="relative w-full h-full">
-                  <Image
+                  <img
                     src="/images/products/ice-cream.jpg"
                     alt="Ice Cream Susu Kambing GEMIK Premium - Sehat dan Lezat"
-                    fill
-                    className="object-cover rounded-xl sm:rounded-2xl"
-                    priority
-                    sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+                    loading="eager"
                   />
-
                   {/* Overlay gradient for better contrast */}
                   <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 via-transparent to-blue-900/20 rounded-xl sm:rounded-2xl"></div>
 

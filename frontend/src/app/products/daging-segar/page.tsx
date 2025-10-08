@@ -313,13 +313,11 @@ const DagingKambingPage = () => {
               <div className="w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-red-100 via-orange-100 to-yellow-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
                 {/* Product Image */}
                 <div className="relative w-full h-full">
-                  <Image
+                  <img
                     src="/images/products/daging-segar.png"
                     alt="Daging Kambing Segar Premium Embik Farm"
-                    fill
-                    className="object-cover rounded-xl sm:rounded-2xl"
-                    priority
-                    sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
+                    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+                    loading="eager"
                   />
 
                   {/* Overlay gradient for better text visibility */}

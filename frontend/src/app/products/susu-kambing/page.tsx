@@ -289,15 +289,12 @@ const SusuKambingPage = () => {
               <div className="w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96 bg-gradient-to-br from-blue-100 via-cyan-100 to-amber-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
                 {/* Product Image */}
                 <div className="relative w-full h-full">
-                  <Image
+                  <img
                     src="/images/products/susu-kambing.jpg"
                     alt="Susu Kambing GEMIK Premium - Segar dan Pasteurisasi"
-                    fill
-                    className="object-cover rounded-xl sm:rounded-2xl"
-                    priority
-                    sizes="(max-width: 640px) 256px, (max-width: 1024px) 320px, 384px"
+                    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+                    loading="eager"
                   />
-
                   {/* Overlay gradient for better contrast */}
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 via-transparent to-cyan-900/20 rounded-xl sm:rounded-2xl"></div>
 

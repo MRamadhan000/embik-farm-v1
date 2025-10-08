@@ -290,18 +290,14 @@ const KohemaxPage = () => {
               <div className="w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-br from-green-100 via-lime-100 to-amber-50 rounded-xl sm:rounded-2xl flex items-center justify-center relative overflow-hidden">
                 {/* Product Image */}
                 <div className="relative w-full h-full">
-                  <Image
+                  <img
                     src="/images/products/kohemax.jpg"
                     alt="Pupuk Organik KOHEMAX - Premium dari Embik Farm"
-                    fill
-                    className="object-cover rounded-xl sm:rounded-2xl"
-                    priority
-                    sizes="(max-width: 640px) 256px, (max-width: 768px) 320px, 384px"
+                    className="w-full h-full object-cover rounded-xl sm:rounded-2xl"
+                    loading="eager"
                   />
-
                   {/* Overlay gradient for better contrast */}
                   <div className="absolute inset-0 bg-gradient-to-t from-green-900/60 via-transparent to-lime-900/30 rounded-xl sm:rounded-2xl"></div>
-
                   {/* Text overlay on image */}
                   <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white z-10">
                     <div className="bg-gradient-to-r from-green-600/90 to-lime-600/90 backdrop-blur-md rounded-lg sm:rounded-xl p-3 sm:p-4 shadow-lg border border-white/20">
@@ -314,7 +310,7 @@ const KohemaxPage = () => {
                       </div>
                     </div>
                   </div>
-                </div>    
+                </div>
               </div>
 
               {/* Eco-Friendly Badge */}
@@ -325,7 +321,7 @@ const KohemaxPage = () => {
               >
                 <Leaf className="w-3 sm:w-4 h-3 sm:h-4" />
                 <span className="text-xs sm:text-sm font-bold">Eco!</span>
-              </div>     
+              </div>
             </div>
           </div>
         </div>
