@@ -34,11 +34,12 @@ const ContactPage = () => {
     }
   }, [success]);
 
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    // Trigger animation on load
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
+  }, []);
 
   const parallaxOffset = scrollY * 0.5;
   const parallaxSlow = scrollY * 0.3;
