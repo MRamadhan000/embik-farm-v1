@@ -252,7 +252,7 @@ export default function OurProducts() {
 
         {/* CTA Button - View All Products */}
         <div className="mt-12 sm:mt-16 flex justify-center">
-          <Link href="/produk">
+          <Link href="/products">
             <button className="group relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold text-base sm:text-lg rounded-2xl shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 transition-all duration-500 overflow-hidden">
               {/* Animated Background */}
               <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
