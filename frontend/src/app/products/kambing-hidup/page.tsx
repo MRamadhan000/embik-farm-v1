@@ -982,11 +982,11 @@ const KambingHidupPage = () => {
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm">
             <div className="flex items-center gap-1.5 sm:gap-2">
               <Phone className="w-3 sm:w-4 h-3 sm:h-4" />
-              <span>0812-3456-7890</span>
+              <span>+62 821-4253-6719</span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2">
               <Mail className="w-3 sm:w-4 h-3 sm:h-4" />
-              <span>info@embikfarm.com</span>
+              <span>embikfarm@gmail.com</span>
             </div>
           </div>
 

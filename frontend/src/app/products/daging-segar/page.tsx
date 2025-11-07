@@ -884,12 +884,12 @@ const DagingKambingPage = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 text-xs sm:text-sm mb-4 sm:mb-5 lg:mb-6">
             <div className="flex items-center gap-1.5 sm:gap-2">
               <Phone className="w-3 sm:w-4 h-3 sm:h-4" />
-              <span>0812-3456-7890</span>
+              <span>+62 821-4253-6719</span>
             </div>
             <div className="flex items-center gap-1.5 sm:gap-2">
               <Mail className="w-3 sm:w-4 h-3 sm:h-4" />
               <span className="break-all sm:break-normal">
-                info@embikfarm.com
+                embikfarm@gmail.com
               </span>
             </div>
           </div>

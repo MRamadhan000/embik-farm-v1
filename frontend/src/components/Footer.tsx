@@ -120,7 +120,7 @@ export default function Footer() {
                 </div>
                 <div className="min-w-0">
                   <p className="font-semibold text-white text-sm sm:text-base">Telepon</p>
-                  <p className="text-xs sm:text-sm text-gray-400">+62 812-3456-7890</p>
+                  <p className="text-xs sm:text-sm text-gray-400">+62 821-4253-6719</p>
                 </div>
               </div>
 
@@ -130,7 +130,7 @@ export default function Footer() {
                 </div>
                 <div className="min-w-0">
                   <p className="font-semibold text-white text-sm sm:text-base">Email</p>
-                  <p className="text-xs sm:text-sm text-gray-400 break-all">info@embikfarm.com</p>
+                  <p className="text-xs sm:text-sm text-gray-400 break-all">embikfarm@gmail.com</p>
                 </div>
               </div>
 
@@ -140,7 +140,7 @@ export default function Footer() {
                 </div>
                 <div className="min-w-0">
                   <p className="font-semibold text-white text-sm sm:text-base">Lokasi</p>
-                  <p className="text-xs sm:text-sm text-gray-400">Gresik, Jawa Timur</p>
+                  <p className="text-xs sm:text-sm text-gray-400">Dampit, Jawa Timur</p>
                 </div>
               </div>
 

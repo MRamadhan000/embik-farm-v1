@@ -93,7 +93,7 @@ const NotFoundPage: React.FC = () => {
               <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
               <div className="text-left min-w-0">
                 <div className="text-xs sm:text-xs lg:text-sm opacity-90">Email</div>
-                <div className="text-xs sm:text-sm lg:text-base font-semibold truncate">info@embikfarm.com</div>
+                <div className="text-xs sm:text-sm lg:text-base font-semibold truncate">embikfarm@gmail.com</div>
               </div>
             </div>
           </div>

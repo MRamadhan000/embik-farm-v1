@@ -47,7 +47,7 @@ const ContactPage = () => {
             icon: Phone,
             title: "Telepon/WhatsApp",
             description: "Hubungi kami langsung untuk konsultasi cepat",
-            detail: "+62 812-3456-7890",
+            detail: "+62 821-4253-6719",
             action: "Hubungi Sekarang",
             link: "tel:+6281234567890"
         },
@@ -55,15 +55,15 @@ const ContactPage = () => {
             icon: Mail,
             title: "Email",
             description: "Kirim pertanyaan atau pesanan melalui email",
-            detail: "info@embikfarm.com",
+            detail: "embikfarm@gmail.com",
             action: "Kirim Email",
-            link: "mailto:info@embikfarm.com"
+            link: "mailto:embikfarm@gmail.com"
         },
         {
             icon: MapPin,
             title: "Lokasi",
             description: "Kunjungi farm kami untuk melihat langsung peternakan kami",
-            detail: "Jl. Raya Peternakan No. 123, Bogor",
+            detail: "Dampit Jawa Timur",
             action: "Lihat Peta",
             link: "https://maps.google.com"
         }
@@ -138,7 +138,7 @@ const ContactPage = () => {
                                 Hubungi via Telepon
                             </a>
                             <a
-                                href="mailto:info@embikfarm.com"
+                                href="mailto:embikfarm@gmail.com"
                                 className="px-4 sm:px-6 py-2.5 sm:py-3 border-2 border-white text-white hover:bg-white hover:text-green-800 font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 text-sm sm:text-base"
                             >
                                 <Mail className="w-3 sm:w-4 h-3 sm:h-4 inline-block mr-1.5 sm:mr-2" />
@@ -385,7 +385,7 @@ const ContactPage = () => {
                             Hubungi Sekarang
                         </a>
                         <a
-                            href="mailto:info@embikfarm.com"
+                            href="mailto:embikfarm@gmail.com"
                             className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white hover:bg-white hover:text-green-800 font-semibold rounded-xl sm:rounded-2xl transition-all duration-300 text-sm sm:text-base"
                         >
                             Kirim Email
@@ -395,11 +395,11 @@ const ContactPage = () => {
                     <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm">
                         <div className="flex items-center gap-1.5 sm:gap-2">
                             <Phone className="w-3 sm:w-4 h-3 sm:h-4" />
-                            <span>+62 812-3456-7890</span>
+                            <span>+62 821-4253-6719</span>
                         </div>
                         <div className="flex items-center gap-1.5 sm:gap-2">
                             <Mail className="w-3 sm:w-4 h-3 sm:h-4" />
-                            <span className="break-all">info@embikfarm.com</span>
+                            <span className="break-all">embikfarm@gmail.com</span>
                         </div>
                     </div>
 

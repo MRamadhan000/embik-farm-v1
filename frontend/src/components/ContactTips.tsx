@@ -34,13 +34,13 @@ const ContactTips: React.FC<ContactTipsProps> = ({
   contacts = [
     { 
       icon: Phone, 
-      text: "0812-3456-7890", 
+      text: "+62 821-4253-6719", 
       href: "tel:+6281234567890" 
     },
     { 
       icon: Mail, 
-      text: "info@embikfarm.com", 
-      href: "mailto:info@embikfarm.com",
+      text: "embikfarm@gmail.com", 
+      href: "mailto:embikfarm@gmail.com",
       className: "break-all sm:break-normal"
     }
   ],

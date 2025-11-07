@@ -986,7 +986,7 @@ const SusuKambingPage = () => {
             <div className="flex items-center gap-1.5 sm:gap-2">
               <Mail className="w-3 sm:w-4 h-3 sm:h-4" />
               <span className="break-all sm:break-normal">
-                info@embikfarm.com
+                embikfarm@gmail.com
               </span>
             </div>
           </div>
