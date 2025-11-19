@@ -112,13 +112,13 @@ const Hero = () => {
                                 isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                             }`}
                         >
-                            <span className="block">Susu Kambing</span>
+                            <span className="block">Embik Farm</span>
                             <span 
-                                className={`block text-green-200 transition-all duration-800 delay-500 ${
+                                className={`block text-yellow-300 transition-all duration-800 delay-500 ${
                                     isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                                 }`}
                             >
-                                Segar & Berkualitas
+                                Energi Kuat Rasa Hebat
                             </span>
                         </h1>
 
